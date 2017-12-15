@@ -218,7 +218,7 @@ $(document).ready(function() {
 function add_user()
 {
     save_method = 'add';
-    $('#form')[0].reset(); // reset form on modals
+    $('#form_tambah')[0].reset(); // reset form on modals
     $('.form-group').removeClass('has-error'); // clear error class
     $('.help-block').empty(); // clear error string
     $('#modal_form_tambah').modal('show'); // show bootstrap modal
@@ -232,7 +232,7 @@ function add_user()
 function edit_user(id_user)
 {
     save_method = 'update';    
-    $('#form')[0].reset(); // reset form on modals
+    $('#form_update')[0].reset(); // reset form on modals
     $('.form-group').removeClass('has-error'); // clear error class
     $('.help-block').empty(); // clear error string
 
@@ -291,17 +291,16 @@ function save()
 
     if(save_method == 'add') {
         url = "<?php echo site_url('user/ajax_add')?>";
-        var formData = new FormData($('#form')[0]);
-        modal = $('#modal_form_tambah').modal('hide');
+        var formData = new FormData($('#form_tambah')[0]);
+        var modal = $('#modal_form_tambah').modal('hide');
     } else {
         url = "<?php echo site_url('user/ajax_update')?>";
         var formData = new FormData($('#form_update')[0]);
-        modal = $('#modal_form_update').modal('hide');
+        var modal = $('#modal_form_update').modal('hide');
     }
 
     // ajax adding data to database
 
-    var formData = new FormData($('#form_update')[0]);
     $.ajax({
         url : url,
         type: "POST",
@@ -373,7 +372,7 @@ function delete_user(id_user)
                 <h3 class="modal-title">Form User</h3>
             </div>
             <div class="modal-body form">
-                <form action="#" id="form" class="form-horizontal">
+                <form action="#" id="form_tambah" class="form-horizontal">
                     <input type="hidden" value="" name="id_user"/> 
                     <div class="form-body">
                 <div class="form-group">
@@ -451,7 +450,7 @@ function delete_user(id_user)
             </div>
             <div class="modal-body form">
                 <form action="#" id="form_update" class="form-horizontal">
-                    <input type="hidden" value="" name="id_users" id="id_users" /> 
+                    <input type="hidden" value="" name="id_user" id="id_user" /> 
                     <div class="form-body">
                 <div class="form-group">
                   <label>Email address</label>

@@ -303,7 +303,7 @@ function edit_paket(id_paket)
 }
 function get_qr(awb)
 {
-    if(confirm('Are you sure delete this data?'))
+    if(confirm('Apakah Kamu Ingin Melihat Kode QR ? '))
     {
         // ajax delete data to database
         $.ajax({
@@ -312,9 +312,8 @@ function get_qr(awb)
             dataType: "JSON",
             success: function(data)
             {
-                                $('#modal_qr').modal('show'); // show bootstrap modal
+                $('#modal_qr').modal('show'); // show bootstrap modal
                 $('#qr-preview div').html('<img src="'+base_url+'tes.png">'); // 
-                $('#qr-preview div').html('<p>'+data.awb+'</p>'); // 
 
             },
             error: function (jqXHR, textStatus, errorThrown)
@@ -400,8 +399,8 @@ function delete_user(id_paket)
             </div>
             <div class="modal-body form">
                 <div class="form-group" id="qr-preview">
-                    <label class="control-label col-md-3">Photo</label>
-                        <div class="col-md-9">
+                    <label class="control-label col-md-3">QR</label>
+                        <div class="-md-9">
                             (No photo)
                             <span class="help-block"></span>
                         </div>

@@ -45,7 +45,11 @@ CREATE TABLE `paket` (
   KEY `id_user` (`id_paket`),
   KEY `id_kurir` (`id_user`),
   CONSTRAINT `paket_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`id_user`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+
+/*Data for the table `paket` */
+
+insert  into `paket`(`id_paket`,`awb`,`id_user`,`pengirim`,`telp_pengirim`,`penerima_tertera`,`alamat_penerima`,`telp_penerima`,`jenis_barang`,`qty`,`width`,`length`,`height`,`kendaraan`,`deskripsi_barang`,`status_pengiriman`,`tgl_input`,`tgl_approve`,`photo`) values (10,'11111111111',35,'a','(1111) 1111-1111','b','c','(2222) 2222-2222','Dokumen',1,2,3,4,'Mobil','d','Delivered','2017-12-14','2017-12-23','1513270856787.PNG'),(11,'22222222222',35,'asd','(2313) 1313-1312','asdasd','adad1231','(1312) 3131-2312','Dokumen',1,1,3,4,'Mobil','dada','Delivered','2017-12-14','2017-07-06','1513272952663.png');
 
 /*Table structure for table `pengiriman` */
 
@@ -69,6 +73,8 @@ CREATE TABLE `pengiriman` (
   CONSTRAINT `pengiriman_ibfk_1` FOREIGN KEY (`id_paket`) REFERENCES `paket` (`id_paket`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+/*Data for the table `pengiriman` */
+
 /*Table structure for table `user` */
 
 DROP TABLE IF EXISTS `user`;
@@ -83,10 +89,15 @@ CREATE TABLE `user` (
   `alamat` text NOT NULL,
   `telp` varchar(25) NOT NULL,
   `status` enum('aktif','non-aktif') NOT NULL,
+  `tanggal_input` date DEFAULT NULL,
   PRIMARY KEY (`id_user`),
   UNIQUE KEY `email` (`email`),
   KEY `id_user` (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=37 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=latin1;
+
+/*Data for the table `user` */
+
+insert  into `user`(`id_user`,`email`,`pass`,`nama`,`type`,`foto_profil`,`alamat`,`telp`,`status`,`tanggal_input`) values (35,'admin@gmail.com','21232f297a57a5a743894a0e4a801fc3','Dwi Yudi Rayi Anugrah','admin','default.png','Subang','085320280635','aktif','2017-12-13'),(36,'dedepermana@gmail.com','21232f297a57a5a743894a0e4a801fc3','Dede Permana','kurir','1512976597434.png','Subang','(0853) 1521-5835','aktif','2017-12-14'),(37,'kurir123@gmail.com','d41d8cd98f00b204e9800998ecf8427e','kurir','admin','1513175659545.jpg','a','(1111) 1111-1111','aktif','2017-12-15');
 
 /*Table structure for table `history_pengiriman` */
 

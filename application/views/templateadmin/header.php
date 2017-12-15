@@ -61,11 +61,11 @@
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="#" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>K</b>B</span>
+      <span class="logo-mini"><b>i</b>K</span>
       <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>DP2KBP3A</b></span>
+      <span class="logo-lg"><b>iKurir</b></span>
     </a>
 
     <!-- Header Navbar: style can be found in header.less -->
@@ -174,22 +174,9 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href=<?php echo site_url('user/index');?>><i class="fa fa-circle-o"></i>Users</a></li>
-                <li><a href=<?php echo site_url('paket/index');?>><i class="fa fa-circle-o"></i>Paket</a></li>
-                <li><a href=<?php echo site_url('user/get_chart');?>><i class="fa fa-circle-o"></i>Paket</a></li>
-                <li class="treeview">
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
+                <li><a href=<?php echo site_url('paket/index');?>><i class="fa fa-circle-o"></i>Paket</a></li>                
               </ul>
             </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
         </li>
 

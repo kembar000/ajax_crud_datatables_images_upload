@@ -106,8 +106,7 @@ class User extends CI_Controller {
 	{
 		$this->_validate_update();
 		$data = array(
-				'email' => $this->input->post('email'),
-				'pass' => md5($this->input->post('pass')),
+				'email' => $this->input->post('email'),				
 				'nama' => $this->input->post('nama'),
 				'type' => $this->input->post('type'),
 				'alamat' => $this->input->post('alamat'),
